@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ff6af47-c56a-4688-8dd8-0862a9d26ab1" name="Changes" comment="" />
+    <list default="true" id="7ff6af47-c56a-4688-8dd8-0862a9d26ab1" name="Changes" comment="s" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,8 +93,16 @@
       <workItem from="1674938694200" duration="2896000" />
       <workItem from="1674944404928" duration="7541000" />
       <workItem from="1675001807504" duration="2994000" />
-      <workItem from="1675005390765" duration="15035000" />
+      <workItem from="1675005390765" duration="15358000" />
     </task>
+    <task id="LOCAL-00001" summary="s">
+      <created>1675025378768</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675025378768</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,15 +114,9 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="FILTERS">
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
                 <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="master" />
-                      </list>
-                    </value>
-                  </entry>
+                  <entry key="Show.Git.Branches" value="true" />
                 </map>
               </option>
             </State>
@@ -122,5 +124,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="start" />
+    <MESSAGE value="s" />
+    <option name="LAST_COMMIT_MESSAGE" value="s" />
   </component>
 </project>
