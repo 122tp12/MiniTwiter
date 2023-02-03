@@ -11,36 +11,33 @@ class MainModel extends \shared\BasicModel
 {
     public function GetTwits($start): array
     {
-        $twits = $this->RunQuery("SELECT * FROM `twit` ORDER BY `datePublish` DESC LIMIT ".$start.", ".(5).";");
+        $twits = $this->RunQuery("SELECT * FROM `twit` ORDER BY `datePublish` DESC LIMIT 5 OFFSET ?", [$start]);
         $result=[];
-
-        for($i=0;$i<$twits->num_rows;$i++){
-            $twits->data_seek($i);
-            $currentTweet= $twits->fetch_array();
-            $user=$this->getUser($currentTweet["userId"]);
-            $result[$i]=new TwitDTO($user["id"], $user["id"], $user["name"], $currentTweet["title"], $currentTweet["datePublish"], $currentTweet["text"]);
+        foreach ($twits as $twit){
+            $user=$this->getUser($twit["userId"])[0];
+            $result[] = new TwitDTO($twit["id"], $user["id"], $user["name"], $twit["title"], $twit["datePublish"], $twit["text"]);
         }
+
         return $result;
     }
     public function GetTwitsOfUser($start, $userId): array
     {
-        $twits = $this->RunQuery("SELECT * FROM `twit` WHERE `userId`=".$userId." ORDER BY `datePublish` DESC LIMIT ".($start).", ".(5).";");
+        $twits = $this->RunQuery("SELECT * FROM `twit` WHERE `userId`=:user ORDER BY `datePublish` DESC LIMIT 5 OFFSET :bg", ["user"=>$userId, "bg"=>$start]);
         $result=[];
 
-        for($i=0;$i<$twits->num_rows;$i++){
-            $twits->data_seek($i);
-            $currentTweet= $twits->fetch_array();
-            $user=$this->getUser($currentTweet["userId"]);
-            $result[$i]=new TwitDTO($user["id"], $user["id"], $user["name"], $currentTweet["title"], $currentTweet["datePublish"], $currentTweet["text"]);
+        foreach ($twits as $twit){
+            $user=$this->getUser($twit["userId"])[0];
+            $result[] = new TwitDTO($twit["id"], $user["id"], $user["name"], $twit["title"], $twit["datePublish"], $twit["text"]);
         }
+
         return $result;
     }
     function GetAllTwitsCount($id=null){
         if($id==null)
             $users = $this->RunQuery("SELECT count(*) FROM `twit`");
         else
-            $users = $this->RunQuery("SELECT count(*) FROM `twit` WHERE `userId`=".$id);
+            $users = $this->RunQuery("SELECT count(*) FROM `twit` WHERE `userId`=:user", ["user"=>$id]);
 
-        return $users->fetch_array();
+        return $users[0][0];
     }
 }

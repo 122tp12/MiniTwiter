@@ -21,10 +21,9 @@ class TwitController extends \shared\BasicController
     public function MyTwitsPage(){
         $this->layout->Begin("My twits");
         if(isset($_SESSION["user"])){
-            $this->model->Connect("twitter");
+            $this->model->Connect();
             $twits=$this->model->GetMyTwits();
             $this->view->Show($twits);
-            $this->model->CloseConnection();
         }
         else{
             echo "<h3>Please sign in</h3>";
@@ -32,17 +31,16 @@ class TwitController extends \shared\BasicController
         $this->layout->End();
     }
     public function MyTwitsPageProcAdd(){
-        $this->model->Connect("twitter");
+        $this->model->Connect();
         if(!preg_match("/^.{4,60}$/",$_POST["title"]))
             $this->redirect("/main/my","Bad title");
         if(!preg_match("/^.{6,200}$/",$_POST["description"]))
             $this->redirect("/main/my","Bad description");
         $this->model->AddMyTwit($_POST["title"],$_POST["description"]);
-        $this->model->CloseConnection();
         $this->redirect("/main/my","Twit added", "alert alert-success");
     }
     public function MyTwitsPageProcEdit(){
-        $this->model->Connect("twitter");
+        $this->model->Connect();
         if(!preg_match("/^.{4,60}$/",$_POST["title"]))
             $this->redirect("/main/my","Bad title");
         if(!preg_match("/^.{6,200}$/",$_POST["description"]))
@@ -50,7 +48,6 @@ class TwitController extends \shared\BasicController
         echo $_POST["id"];
         echo $_SESSION["user"];
         $this->model->EditMyTwit($_POST["id"] ,$_SESSION["user"], $_POST["title"],$_POST["description"]);
-        $this->model->CloseConnection();
         $this->redirect("/main/my","Twit edited", "alert alert-success");
     }
 }

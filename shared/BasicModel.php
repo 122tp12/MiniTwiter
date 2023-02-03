@@ -4,29 +4,27 @@ namespace shared;
 
 include_once "IBasicModel.php";
 
-use mysqli;
+use PDO;
 
 abstract class BasicModel implements IBasicModel
 {
     protected $conn;
-    function Connect($database){
-        $this->conn = new mysqli("localhost", "root", "", $database);
+    function Connect(){
+        $this->conn = new PDO("mysql:host=localhost;dbname=twitter;", "root", "");
+        $this->conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
         if($this->conn->connect_error) {
             return $this->conn->connect_error;
         }
     }
-    function CloseConnection(){
-        $this->conn->close();
-    }
-    function RunQuery($sql){
-        if($result = $this->conn->query($sql)){
-            return $result;
-        } else{
-            return $this->conn->connect_error;
-        }
+    function RunQuery($sql, $param=null){
+        $sth=$this->conn->prepare($sql);
+        if($param!=null)
+            $sth->execute($param);
+        else
+            $sth->execute();
+        return $sth->fetchAll();
     }
     function getUser($id){
-        $users = $this->RunQuery("SELECT * FROM `user` WHERE `id`=".$id);
-        return $users->fetch_array();
+        return $this->RunQuery("SELECT * FROM `user` WHERE `id`= :id ",['id'=>$id]);
     }
 }

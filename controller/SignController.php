@@ -31,12 +31,11 @@ class SignController extends \shared\BasicController
     public function SignInProc(){
         if(!preg_match("/^(?=.{6,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/",$_POST["login"]))
             $this->redirect("/signIn","Bad login");
-        if(!preg_match("/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,20}$/",$_POST["password"]))
+        if(!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,20}$/",$_POST["password"]))
             $this->redirect("/signIn","Bad password");
 
-        $this->model->Connect("twitter");
+        $this->model->Connect();
         $this->model->SignIn($_POST["login"],$_POST["password"]);
-        $this->model->CloseConnection();
         if(isset($_SESSION["user"]))
             $this->redirect("/main");
         else
@@ -58,9 +57,8 @@ class SignController extends \shared\BasicController
         if(!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,20}$/",$_POST["password"]))
             $this->redirect("/signUp","Bad password");
 
-        $this->model->Connect("twitter");
+        $this->model->Connect();
         $result=$this->model->SignUp($_POST["name"],$_POST["login"],$_POST["password"]);
-        $this->model->CloseConnection();
         if($result){
             $this->redirect("/signIn");
         }

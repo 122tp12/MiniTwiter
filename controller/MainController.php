@@ -27,7 +27,7 @@ class MainController extends \shared\BasicController
     {
 
         $this->layout->Begin("Twitter");
-        $this->model->Connect("twitter");
+        $this->model->Connect();
         if(isset($_GET["page"]))
             $page=$_GET["page"];
         else
@@ -35,25 +35,23 @@ class MainController extends \shared\BasicController
 
         if(isset($_GET["id"])) {
             $twits = $this->model->GetTwitsOfUser($page, $_GET["id"]);
-            $this->view->Show($twits, "Twits of " . $this->model->getUser($_GET["id"])["name"], $this->model->GetAllTwitsCount($_GET["id"])[0]);
+            $this->view->Show($twits, "Twits of " . $this->model->getUser($_GET["id"])[0]["name"], $this->model->GetAllTwitsCount($_GET["id"])[0]);
         }
         else {
             $twits = $this->model->GetTwits($page);
             $this->view->Show($twits, "Recent Twits", $this->model->GetAllTwitsCount()[0]);
         }
-        $this->model->CloseConnection();
         $this->layout->End();
     }
     public function LoadMore()
     {
-        $this->model->Connect("twitter");
+        $this->model->Connect();
         if(isset($_POST["id"])){
             $twits = $this->model->GetTwitsOfUser($_POST["row"], $_POST["id"]);
         }
         else{
             $twits = $this->model->GetTwits($_POST["row"]);
         }
-        $this->model->CloseConnection();
         foreach ($twits as $twit){
             echo "<div class='card-body p-4'>
                     <div class='d-flex flex-start'>
