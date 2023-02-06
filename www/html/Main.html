@@ -1,0 +1,117 @@
+<html>
+<head>
+    <title><?php echo $title ?></title>
+    <meta charset='UTF-8'>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD' crossorigin='anonymous'>
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js' integrity='sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN' crossorigin='anonymous'></script>
+    <script src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js'></script>
+    <link rel='stylesheet' href='www/css/style.css'>
+</head>
+<body>
+<header class='p-3 text-bg-dark'>
+    <div class='container'>
+        <div class='d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start'>
+
+
+            <ul class='nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0'>
+                <li><a href='\main' class='nav-link px-2 text-white'>Home</a></li>
+                <li><a href='\main\my' class='nav-link px-2 text-white'>My twits</a></li>
+            </ul>
+            <?php
+             if(isset($_SESSION["username"])){
+                echo "<h3 class='text-end'>".$_SESSION["username"]."</h3> <a href='\signOut'><button type='button' class='btn btn-outline-warning mx-2'>Sign out</button></a>";
+            }
+            else{
+                echo "<div class='text-end'>
+                <a href='\signIn'><button type='button' class='btn btn-outline-light me-2'>Sign in</button></a>
+                <a href='\signUp'><button type='button' class='btn btn-warning'>Sign up</button></a>
+                </div>";
+            }
+            ?></div>
+    </div>
+</header>
+
+
+<h4 class='p-3 mx-5 px-5'><?php echo $title ?></h4>
+
+<div class='d-flex justify-content-center'>
+    <div class='col-md-12 col-lg-10'>
+        <div class='card text-dark'>
+            <?php foreach ($twits as $twit){?>
+                <div class='card-body p-4'>
+                    <div class='d-flex flex-start'>
+                        <div>
+                            <h6 class='fw-bold mb-1'><?php echo $twit->title ?></h6>
+                            <div class='d-flex align-items-center mb-3'>
+                                <p class='mb-0'>
+                                    <a href='/main?id=<?php echo $twit->userId ?>'>@<?php echo $twit->userName ?></a> &#8226; <?php echo $twit->date ?>
+                                </p>
+                            </div>
+                            <p class='mb-0'>
+                                <?php echo $twit->text ?>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <hr class='my-0'>
+            <?php } ?>
+            <span id='last'/></div>
+        <button class='btn btn-outline-warning load-more m-2'>Load more</button>
+    </div>
+
+    <?php
+        if(isset($_GET["id"])){
+                echo "<input type='hidden' id='id' value='".$_GET["id"]."'/>";
+        }
+    ?>
+    <input type='hidden' id='row' value='0'/>
+    <input type='hidden' id='all' value='<?php echo $allTwitsCount ?>'/>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.load-more').click(function(){
+                var row = Number($('#row').val());
+                var allcount = Number($('#all').val());
+                var rowperpage = 5;
+                row = row + rowperpage;
+                $("#row").val(row);
+                var id = Number($('#id').val());
+                var data={
+                    'row':row,
+                    'id':id,
+                };
+                if(row < allcount){
+
+                    $.ajax({
+                        url: 'main/load',
+                        type: 'post',
+                        data: data,
+                        beforeSend:function(){
+                    $(".load-more").text("Loading...");
+                },
+                        success: function(response){
+                        $("#last").before(response).show().fadeIn("slow");
+
+                        var rowno = row + rowperpage;
+                        if(rowno >= allcount){
+                            $('.load-more').remove();
+                        }else{
+                            $(".load-more").text("Load more");
+                        }
+
+                },
+                        error: function () {
+                            $('.load-more').remove();
+                        }
+                    });
+                }else{
+                            $('.load-more').remove();
+        }
+
+        });
+
+        });
+    </script>
+</div>
+
+</body></html>

@@ -22,7 +22,7 @@ class MainModel extends \shared\BasicModel
     }
     public function GetTwitsOfUser($start, $userId): array
     {
-        $twits = $this->RunQuery("SELECT * FROM `twit` WHERE `userId`=:user ORDER BY `datePublish` DESC LIMIT 5 OFFSET :bg", ["user"=>$userId, "bg"=>$start]);
+        $twits = $this->RunQuery("SELECT * FROM `twit` WHERE `userId`=? ORDER BY `datePublish` DESC LIMIT 5 OFFSET ?", [$userId, $start]);
         $result=[];
 
         foreach ($twits as $twit){
@@ -36,8 +36,7 @@ class MainModel extends \shared\BasicModel
         if($id==null)
             $users = $this->RunQuery("SELECT count(*) FROM `twit`");
         else
-            $users = $this->RunQuery("SELECT count(*) FROM `twit` WHERE `userId`=:user", ["user"=>$id]);
-
+            $users = $this->RunQuery("SELECT count(*) FROM `twit` WHERE `userId`=?", [$id]);
         return $users[0][0];
     }
 }
