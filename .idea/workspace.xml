@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ff6af47-c56a-4688-8dd8-0862a9d26ab1" name="Changes" comment="db fix">
-      <change afterPath="$PROJECT_DIR$/www/html/Main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/www/html/MainLoadMoreElement.html" afterDir="false" />
+    <list default="true" id="7ff6af47-c56a-4688-8dd8-0862a9d26ab1" name="Changes" comment="main to html">
+      <change afterPath="$PROJECT_DIR$/www/html/SignIn.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/html/SignUp.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/MainModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/MainModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/MainView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/MainView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/shared/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/shared/style/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/shared/style/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/SignController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/SignController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/SignInView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/SignInView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/SignUpView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/SignUpView.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +44,7 @@
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="1088ed48-8407-4d12-beef-0a65482911e8" />
+        <option name="accountId" value="4578f691-7100-4d36-bf05-878889aa0b88" />
         <option name="url" value="https://github.com/122tp12/MiniTwiter.git" />
       </UrlAndAccount>
     </option>
@@ -59,7 +56,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2KbajgomCLumgEyCPCf9tFiZJT9" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -124,7 +123,7 @@
       <workItem from="1675447338995" duration="7605000" />
       <workItem from="1675527528950" duration="2929000" />
       <workItem from="1675674738796" duration="10199000" />
-      <workItem from="1675693360272" duration="196000" />
+      <workItem from="1675693360272" duration="3212000" />
     </task>
     <task id="LOCAL-00001" summary="s">
       <created>1675025378768</created>
@@ -147,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675453336354</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="main to html">
+      <created>1675693590637</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675693590637</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,6 +191,7 @@
     <MESSAGE value="start" />
     <MESSAGE value="s" />
     <MESSAGE value="db fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="db fix" />
+    <MESSAGE value="main to html" />
+    <option name="LAST_COMMIT_MESSAGE" value="main to html" />
   </component>
 </project>

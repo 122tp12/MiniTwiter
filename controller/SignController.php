@@ -19,14 +19,11 @@ class SignController extends \shared\BasicController
     public function __construct()
     {
         $this->model=new SignModel();
-        $this->layout=new NoUserLayout();
     }
     public function SignIn()
     {
-        $this->layout->Begin("Sign in");
         $this->view=new SignInView();
         $this->view->Show();
-        $this->layout->End();
     }
     public function SignInProc(){
         if(!preg_match("/^(?=.{6,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/",$_POST["login"]))
@@ -43,10 +40,8 @@ class SignController extends \shared\BasicController
     }
 
     public function SignUp(){
-        $this->layout->Begin("Sign up");
         $this->view=new SignUpView();
         $this->view->Show();
-        $this->layout->End();
     }
     public function SignUpProc(){
 
