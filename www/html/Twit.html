@@ -1,0 +1,127 @@
+<html>
+<head>
+  <title><?php echo $title ?></title>
+  <meta charset='UTF-8'>
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD' crossorigin='anonymous'>
+  <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js' integrity='sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN' crossorigin='anonymous'></script>
+  <script src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js'></script>
+  <link rel='stylesheet' href='www/css/style.css'>
+</head>
+<body>
+<header class='p-3 text-bg-dark'>
+  <div class='container'>
+    <div class='d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start'>
+
+
+      <ul class='nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0'>
+        <li><a href='\main' class='nav-link px-2 text-white'>Home</a></li>
+        <li><a href='\main\my' class='nav-link px-2 text-white'>My twits</a></li>
+      </ul>
+      <?php
+                if(isset($_SESSION["username"])){
+                    echo "<h3 class='text-end'>".$_SESSION["username"]."</h3> <a href='\signOut'><button type='button' class='btn btn-outline-warning mx-2'>Sign out</button></a>";
+      }
+      else{
+      echo "<div class='text-end'>
+      <a href='\signIn'><button type='button' class='btn btn-outline-light me-2'>Sign in</button></a>
+      <a href='\signUp'><button type='button' class='btn btn-warning'>Sign up</button></a>
+    </div>";
+      }
+      ?>
+    </div>
+  </div>
+</header>
+
+<div class='container'>
+  <form action='/main/my/add' method='post'>
+    <div class='form-group'>
+      <label for='exampleInputTitle1'>Title</label>
+      <input type='text' class='form-control' id='exampleInputTitle1' placeholder='Enter title' name='title' minlength='4' maxlength='60'>
+    </div>
+    <div class='form-group'>
+      <label for='inputDescription1'>Description</label>
+      <textarea  type='text' class='form-control' id='inputDescription1' placeholder='Description' name='description' row='3' minlength='6' maxlength='200'></textarea>
+    </div>
+    <button type='submit' class='btn btn-primary m-1'>Add</button>
+  </form>
+</div>
+<hr/>
+
+<?php
+  $this->showCookieMessage();
+?>
+
+<h4 class='mx-5 px-5'>Your twits</h4>
+<p class='mx-5 px-5'>Double click to edit</p>
+
+<div class='d-flex justify-content-center'>
+  <div class='col-md-12 col-lg-10'>
+    <div class='card text-dark'>
+      <?php foreach ($twits as $twit){ ?>
+        <span class='on-db'>
+                     <div class='card-body p-4'>
+                        <div class='d-flex flex-start'>
+                          <div>
+                            <span>
+                                <h6 class='fw-bold mb-1'><?php echo $twit->title ?></h6>
+                            </span>
+                            <div class='d-flex align-items-center mb-3'>
+                                <p class='mb-0'>
+                                <a href='/main?id=".$twit->userId."'><?php echo $twit->userName ?></a> &#8226; <?php echo $twit->date ?>
+                                </p>
+                            </div>
+                            <p class='mb-0'>
+                                <?php echo $twit->text ?>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <form action='/main/my/edit' method='post' hidden>
+                      <input type='hidden' name='id' value=<?php echo $twit->twitId ?> />
+                      <div class='card-body p-4'>
+                        <div class='d-flex flex-start'>
+                          <div>
+                             <input type='text' name='title' class='fw-bold mb-1 form-control' value=<?php echo $twit->title ?> minlength='4' maxlength='60'/>
+                            <div class='d-flex align-items-center mb-3'>
+                                <p class='mb-0'>
+                                <a href='/main?id=".$twit->userId."'>@<?php echo $twit->userName ?></a> &#8226; <?php echo $twit->date ?>
+                                </p>
+                            </div>
+                                <textarea type='text' class='mb-0 form-control' name='description' row='3' minlength='6' maxlength='200'><?php echo $twit->text ?></textarea>
+                                <br/>
+                          <input type='submit' name='edit' class='btn btn-primary m-1'/>
+
+                          </div>
+                        </div>
+                      </div>
+                </form>
+                </span>
+      <hr class='my-0'>
+      <?php
+        }
+      ?>
+      </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+                $(document).ready(function(){
+                    $('.on-db').dblclick(function() {
+                        var domElement = $( this ).get( 0 );
+                        if(domElement.firstElementChild.hidden==''){
+                            domElement.firstElementChild.setAttribute('hidden', true);
+                            domElement.lastElementChild.removeAttribute('hidden');
+                        }
+                        else{
+                            domElement.lastElementChild.setAttribute('hidden', true);
+                            domElement.firstElementChild.removeAttribute('hidden');
+                        }
+
+                    });
+                });
+            </script>
+
+</body>
+</html>

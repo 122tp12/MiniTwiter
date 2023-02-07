@@ -16,19 +16,16 @@ class TwitController extends \shared\BasicController
     {
         $this->model=new TwitModel();
         $this->view=new TwitView();
-        $this->layout=new DefaultLayout();
     }
     public function MyTwitsPage(){
-        $this->layout->Begin("My twits");
         if(isset($_SESSION["user"])){
             $this->model->Connect();
             $twits=$this->model->GetMyTwits();
-            $this->view->Show($twits);
+            $this->view->Show(true, "My twits", $twits);
         }
         else{
-            echo "<h3>Please sign in</h3>";
+            $this->view->Show(false, "Please sign in");
         }
-        $this->layout->End();
     }
     public function MyTwitsPageProcAdd(){
         $this->model->Connect();

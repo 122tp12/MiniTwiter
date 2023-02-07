@@ -23,7 +23,7 @@ class SignController extends \shared\BasicController
     public function SignIn()
     {
         $this->view=new SignInView();
-        $this->view->Show();
+        $this->view->Show("Sing in");
     }
     public function SignInProc(){
         if(!preg_match("/^(?=.{6,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/",$_POST["login"]))
@@ -41,7 +41,7 @@ class SignController extends \shared\BasicController
 
     public function SignUp(){
         $this->view=new SignUpView();
-        $this->view->Show();
+        $this->view->Show("Sign up");
     }
     public function SignUpProc(){
 

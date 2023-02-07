@@ -10,7 +10,7 @@ class TwitModel extends \shared\BasicModel
 {
     public function GetMyTwits(): array
     {
-        $twits = $this->RunQuery("SELECT * FROM `twit` WHERE `userId`=:id",["id"=>$_SESSION["user"]]);
+        $twits = $this->RunQuery("SELECT * FROM `twit` WHERE `userId`=:id ORDER BY `datePublish` DESC",["id"=>$_SESSION["user"]]);
         $result=[];
 
         foreach ($twits as $twit){
