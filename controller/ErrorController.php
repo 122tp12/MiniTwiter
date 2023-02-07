@@ -2,25 +2,21 @@
 
 namespace controller;
 
-use layout\NoUserLayout;
+use view\ErrorView;
 
 include_once "shared\BasicController.php";
-include_once "view\shared\NoUserLayout.php";
+include_once "view\ErrorView.php";
 
 class ErrorController extends \shared\BasicController
 {
     public function __construct()
     {
-        $this->layout=new NoUserLayout();
+        $this->view=new ErrorView();
     }
     public function PageNotFound(){
-        $this->layout->Begin("Not found");
-        echo "Page not found";
-        $this->layout->End();
+        $this->view->Show("Not found", "Page not found");
     }
     public function ErrorPage($errorMessege){
-        $this->layout->Begin("Error");
-        echo $errorMessege;
-        $this->layout->End();
+        $this->view->Show("Error", $errorMessege);
     }
 }

@@ -7,6 +7,7 @@
     <script src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
     <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js'></script>
     <link rel='stylesheet' href='www/css/style.css'>
+    <script src="www/js/Main.js" type="text/javascript"></script>
 </head>
 <body>
 <header class='p-3 text-bg-dark'>
@@ -68,51 +69,6 @@
     ?>
     <input type='hidden' id='row' value='0'/>
     <input type='hidden' id='all' value='<?php echo $allTwitsCount ?>'/>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('.load-more').click(function(){
-                var row = Number($('#row').val());
-                var allcount = Number($('#all').val());
-                var rowperpage = 5;
-                row = row + rowperpage;
-                $("#row").val(row);
-                var id = Number($('#id').val());
-                var data={
-                    'row':row,
-                    'id':id,
-                };
-                if(row < allcount){
-
-                    $.ajax({
-                        url: 'main/load',
-                        type: 'post',
-                        data: data,
-                        beforeSend:function(){
-                    $(".load-more").text("Loading...");
-                },
-                        success: function(response){
-                        $("#last").before(response).show().fadeIn("slow");
-
-                        var rowno = row + rowperpage;
-                        if(rowno >= allcount){
-                            $('.load-more').remove();
-                        }else{
-                            $(".load-more").text("Load more");
-                        }
-
-                },
-                        error: function () {
-                            $('.load-more').remove();
-                        }
-                    });
-                }else{
-                            $('.load-more').remove();
-        }
-
-        });
-
-        });
-    </script>
 </div>
 
 </body></html>
