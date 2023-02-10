@@ -2,14 +2,11 @@
 
 namespace controller;
 
-use layout\DefaultLayout;
-use layout\NoUserLayout;
 use model\MainModel;
 use view\MainView;
 
 include_once 'shared\IBasicController.php';
 include_once 'shared\BasicController.php';
-include_once 'view\shared\DefaultLayout.php';
 include_once 'view\MainView.php';
 include_once 'model\MainModel.php';
 
@@ -19,7 +16,6 @@ class MainController extends \shared\BasicController
     public function __construct()
     {
         $this->view=new MainView();
-        $this->layout=new DefaultLayout();
         $this->model=new MainModel();
     }
 

@@ -7,6 +7,7 @@ class ErrorView extends \shared\BasicView
 
     public function Show($title=null, $message=null)
     {
-        include_once "www/html/support/Error.html";
+        $childView="www/html/support/Error.html";
+        include "www/html/layout/NoUserLayout.html";
     }
 }

@@ -4,11 +4,9 @@ namespace controller;
 
 include_once "model\TwitModel.php";
 include_once "view\TwitView.php";
-include_once "view\shared\DefaultLayout.php";
 
 use model\TwitModel;
 use view\TwitView;
-use layout\DefaultLayout;
 
 class TwitController extends \shared\BasicController
 {

@@ -2,7 +2,6 @@
 
 namespace controller;
 
-use layout\NoUserLayout;
 use model\SignModel;
 use view\SignInView;
 use view\SignUpView;
@@ -12,7 +11,6 @@ include_once 'shared\BasicController.php';
 include_once 'model\SignModel.php';
 include_once 'view\SignInView.php';
 include_once 'view\SignUpView.php';
-include_once 'view\shared\NoUserLayout.php';
 
 class SignController extends \shared\BasicController
 {
