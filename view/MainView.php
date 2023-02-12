@@ -9,7 +9,7 @@ use shared\BasicView;
 class MainView extends BasicView
 {
     public function Show(Array $twits=null, $title=null, $allTwitsCount=null){
-        $childView="www/html/Main.html";
-        include "www/html/layout/DefaultLayout.html";
+        $childView="src/html/Main.html";
+        include "src/html/layout/DefaultLayout.html";
     }
 }

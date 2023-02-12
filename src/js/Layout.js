@@ -1,3 +1,7 @@
+require('../css/style.css');
+$(document).ready(function(){
+    startTime();
+});
 function startTime() {
     const today = new Date();
     let h = today.getHours();

@@ -4,16 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ff6af47-c56a-4688-8dd8-0862a9d26ab1" name="Changes" comment="fix+layout sep">
-      <change afterPath="$PROJECT_DIR$/www/js/Layout.js" afterDir="false" />
+    <list default="true" id="7ff6af47-c56a-4688-8dd8-0862a9d26ab1" name="Changes" comment="clock added">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/css/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/html/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/html/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/html/Twit.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/html/Twit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/html/layout/DefaultLayout.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/html/layout/DefaultLayout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/html/layout/NoUserLayout.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/html/layout/NoUserLayout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/ErrorView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/ErrorView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/MainView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/MainView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/SignInView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/SignInView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/SignUpView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/SignUpView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/TwitView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/TwitView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/css/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/html/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/Main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/html/SignIn.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/SignIn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/html/SignUp.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/SignUp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/html/Twit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/Twit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/html/layout/DefaultLayout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/layout/DefaultLayout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/html/layout/NoUserLayout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/layout/NoUserLayout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/html/support/Error.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/support/Error.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/html/support/MainLoadMoreElement.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/support/MainLoadMoreElement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/html/support/PleaseSignIn.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/support/PleaseSignIn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/js/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/js/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/js/Twit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Twit.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,24 +85,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TODO_SCOPE": "All Places",
+    "WebServerToolWindowFactoryState": "false",
+    "javascript.nodejs.core.library.configured.version": "18.13.0",
+    "javascript.nodejs.core.library.typings.version": "18.13.0",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "php.override.implement.member.chooser.php.doc": "NONE",
+    "settings.editor.selected.configurable": "inlay.hints",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\OSPanel\domains\MiniTwiter\www\html\support" />
