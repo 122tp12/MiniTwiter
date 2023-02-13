@@ -1,5 +1,5 @@
 const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+//const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
@@ -20,15 +20,17 @@ module.exports = {
             new TerserPlugin()
         ]
     },
-    plugins: [
+    /*plugins: [
         new MiniCssExtractPlugin({ filename: "[name].css" })
-    ],
+    ],*/
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /\.scss$/,
                 use: [
-                    "css-loader"
+                    "style-loader",//MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    "sass-loader"
                 ]
             },
             {
@@ -37,7 +39,7 @@ module.exports = {
                     loader: "file-loader",
                     options: {
                         name: "[name].[hash].[ext]",
-                        outputPath: "imgs"
+                        outputPath: "img"
                     }
                 }
             }

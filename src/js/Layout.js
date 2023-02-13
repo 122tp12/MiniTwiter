@@ -1,4 +1,7 @@
-require('../css/style.css');
+import "jquery";
+import "ajax";
+import "../css/style.scss";
+
 $(document).ready(function(){
     startTime();
 });
