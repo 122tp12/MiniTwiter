@@ -11,12 +11,12 @@ class TwitView extends BasicView
     public function Show(Bool $signed=null, $title=null, Array $twits=null)
     {
         if($signed) {
-            $childView = "src/html/Twit.html";
-            include_once "src/html/layout/DefaultLayout.html";
+            $childView = "dist/html/Twit.html";
+            include_once "dist/html/layout/DefaultLayout.html";
         }
         else {
-            $childView = "src/html/support/PleaseSignIn.html";
-            include_once "src/html/layout/DefaultLayout.html";
+            $childView = "dist/html/support/PleaseSignIn.html";
+            include_once "dist/html/layout/DefaultLayout.html";
         }
     }
 }

@@ -42,7 +42,7 @@ class MainController extends \shared\BasicController
             $twits = $this->model->GetTwitsOfUser($_POST["row"], $_POST["id"]);
         }
         foreach ($twits as $twit){
-            include "src/html/support/MainLoadMoreElement.html";
+            include "dist/html/support/MainLoadMoreElement.html";
         }
     }
 }

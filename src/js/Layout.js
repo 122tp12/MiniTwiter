@@ -3,7 +3,7 @@ import "ajax";
 import "../css/style.scss";
 
 $(document).ready(function(){
-    startTime();
+
 });
 function startTime() {
     const today = new Date();

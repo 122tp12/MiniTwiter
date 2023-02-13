@@ -9,7 +9,7 @@ use shared\BasicView;
 class SignUpView extends BasicView
 {
     public function Show($title=null){
-        $childView="src/html/SignUp.html";
-        include "src/html/layout/NoUserLayout.html";
+        $childView="dist/html/SignUp.html";
+        include "dist/html/layout/NoUserLayout.html";
     }
 }
