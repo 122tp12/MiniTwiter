@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ff6af47-c56a-4688-8dd8-0862a9d26ab1" name="Changes" comment="css, depend js webpacked">
+    <list default="true" id="7ff6af47-c56a-4688-8dd8-0862a9d26ab1" name="Changes" comment="html webpacked">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/layout/DefaultLayout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/layout/DefaultLayout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/ErrorView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/ErrorView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/MainView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/MainView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/SignInView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/SignInView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/SignUpView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/SignUpView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/TwitView.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/TwitView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twitter.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +131,8 @@
       <workItem from="1675810254807" duration="1929000" />
       <workItem from="1675877925213" duration="8503000" />
       <workItem from="1676040123239" duration="5078000" />
-      <workItem from="1676277600676" duration="6618000" />
+      <workItem from="1676277600676" duration="6827000" />
+      <workItem from="1676392275222" duration="6983000" />
     </task>
     <task id="LOCAL-00001" summary="s">
       <created>1675025378768</created>
@@ -214,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676281241213</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="html webpacked">
+      <created>1676297237447</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1676297237447</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,6 +256,7 @@
     <MESSAGE value="fix+layout sep" />
     <MESSAGE value="js webpacked" />
     <MESSAGE value="css, depend js webpacked" />
-    <option name="LAST_COMMIT_MESSAGE" value="css, depend js webpacked" />
+    <MESSAGE value="html webpacked" />
+    <option name="LAST_COMMIT_MESSAGE" value="html webpacked" />
   </component>
 </project>
