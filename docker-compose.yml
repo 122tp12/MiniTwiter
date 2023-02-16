@@ -1,0 +1,47 @@
+version: "3.9"
+services:
+  php-apache:
+    ports:
+      - "80:80"
+    build: './build/php'
+    volumes:
+      - ./app:/var/www/html
+  db:
+    image: mysql:latest
+    container_name: db
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+      MYSQL_DATABASE: twitter
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: ""
+    restart: unless-stopped
+    volumes:
+      - db-vol:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  db_seeder:
+    image: mysql:latest
+    volumes:
+      - ./db.sql:/db.sql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+    entrypoint: [ "bash", "-c", "sleep 10 && mysql --user=root --host=db --port=3306 twitter < /db.sql && exit"] 
+    depends_on:
+      - db
+
+  phpmyadmin:
+      image: phpmyadmin:latest
+      restart: unless-stopped
+      ports:
+          - 8080:80
+      environment:
+          # we specify that we connect to an arbitrary server with the flag below
+          # "arbitrary" means you're able to specify which database server to use on login page of phpmyadmin      
+          - PMA_ARBITRARY=1
+      depends_on:
+        - db_seeder
+volumes:
+  app:
+  dbData:
+  db-vol:
