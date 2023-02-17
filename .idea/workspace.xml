@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ff6af47-c56a-4688-8dd8-0862a9d26ab1" name="Changes" comment="html webpacked">
+    <list default="true" id="7ff6af47-c56a-4688-8dd8-0862a9d26ab1" name="Changes" comment="project moved to app, docker added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,9 +44,6 @@
         <option name="url" value="https://github.com/122tp12/MiniTwiter.git" />
       </UrlAndAccount>
     </option>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/model/SignModel.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -133,6 +129,7 @@
       <workItem from="1676040123239" duration="5078000" />
       <workItem from="1676277600676" duration="6827000" />
       <workItem from="1676392275222" duration="6983000" />
+      <workItem from="1676571903580" duration="766000" />
     </task>
     <task id="LOCAL-00001" summary="s">
       <created>1675025378768</created>
@@ -211,7 +208,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676297237447</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="project moved to app, docker added">
+      <created>1676574610285</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1676574610285</updated>
+    </task>
+    <task id="LOCAL-00013" summary="project moved to app, docker added">
+      <created>1676574679474</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1676574679474</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,6 +268,7 @@
     <MESSAGE value="js webpacked" />
     <MESSAGE value="css, depend js webpacked" />
     <MESSAGE value="html webpacked" />
-    <option name="LAST_COMMIT_MESSAGE" value="html webpacked" />
+    <MESSAGE value="project moved to app, docker added" />
+    <option name="LAST_COMMIT_MESSAGE" value="project moved to app, docker added" />
   </component>
 </project>

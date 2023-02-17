@@ -26,7 +26,7 @@ services:
       - ./db.sql:/db.sql
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "true"
-    entrypoint: [ "bash", "-c", "sleep 10 && mysql --user=root --host=db --port=3306 twitter < /db.sql && exit"] 
+    entrypoint: [ "bash", "-c", "sleep 15 && mysql --user=root --host=db --port=3306 twitter < /db.sql && exit"] 
     depends_on:
       - db
 

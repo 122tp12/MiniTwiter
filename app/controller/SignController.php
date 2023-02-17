@@ -49,15 +49,19 @@ class SignController extends \shared\BasicController
             $this->redirect("/signUp","Bad name");
         if(!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,20}$/",$_POST["password"]))
             $this->redirect("/signUp","Bad password");
-
+        
         $this->model->Connect();
+        if($this->model->LoginExist($_POST["login"]))
+            $this->redirect("/signUp","Login exist");
+        if($this->model->NameExist($_POST["name"]))
+            $this->redirect("/signUp","Name exist");
+
         $result=$this->model->SignUp($_POST["name"],$_POST["login"],$_POST["password"]);
-        if($result){
+        
+        if($result)
             $this->redirect("/signIn");
-        }
-        else{
+        else
             $this->redirect("/signUp","Something wrong");
-        }
     }
     public function SignOut()
     {

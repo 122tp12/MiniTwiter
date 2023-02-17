@@ -40,8 +40,6 @@ class TwitController extends \shared\BasicController
             $this->redirect("/main/my","Bad title");
         if(!preg_match("/^.{6,200}$/",$_POST["description"]))
             $this->redirect("/main/my","Bad description");
-        echo $_POST["id"];
-        echo $_SESSION["user"];
         $this->model->EditMyTwit($_POST["id"] ,$_SESSION["user"], $_POST["title"],$_POST["description"]);
         $this->redirect("/main/my","Twit edited", "alert alert-success");
     }
