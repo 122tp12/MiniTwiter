@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
   `login` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -73,8 +73,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `login`, `password`) VALUES
-(17, 'Name1', 'Login1', 'Password1'),
-(18, 'Name2', 'Login2', 'Password2');
+(17, 'Name1', 'Login1', '$2y$10$Yssmqwog22pIa2tsr8poK.6t6CMAFpO/CXHXLsqC3Y/l0IprHCssy'),/*hashed Password1*/
+(18, 'Name2', 'Login2', '$2y$10$g0PW41OQKkANM9gWZ9jX0edWeoPYoreZZS9kuOIPC0RYxpXvHtc1S');/*hashed Password2*/
 
 --
 -- Обмеження зовнішнього ключа збережених таблиць

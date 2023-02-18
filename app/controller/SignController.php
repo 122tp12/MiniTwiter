@@ -57,11 +57,11 @@ class SignController extends \shared\BasicController
             $this->redirect("/signUp","Name exist");
 
         $result=$this->model->SignUp($_POST["name"],$_POST["login"],$_POST["password"]);
-        
-        if($result)
+
+        if(count($result)==0)
             $this->redirect("/signIn");
         else
-            $this->redirect("/signUp","Something wrong");
+            $this->redirect("/signUp","Wrong login or password");
     }
     public function SignOut()
     {
