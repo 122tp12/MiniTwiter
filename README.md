@@ -1,4 +1,5 @@
 Getting Started
+
 Follow the instructions below to get the project up and running on your local machine.
 To run this project, you will need to have Node.js and Docker, installed on your machine.
 
